@@ -2,6 +2,7 @@ import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity, FlatList } 
 import React from 'react'
 import { AntDesign } from '@expo/vector-icons';
 import { socialData } from '../mock/SocialAccounts';
+import { popularJobsData } from '../mock/PopularJobs';
 
 const JobsScreen = () => {
   return (
@@ -51,7 +52,7 @@ const JobsScreen = () => {
                         <View style={styles.socialDataContainer}>
                             <View style={{flexDirection:"row"}}>
                                 <View style={{backgroundColor:"white", width:50, borderRadius:5}}>
-                                    <Image style={{alignSelf:"center"}}source={item.image}/>
+                                    <Image style={[styles.image, item.imageStyle]}source={item.image}/>
                                 </View>
 
                                   <View style={{flexDirection:"column", alignItems:"center", marginLeft:5}}>
@@ -74,13 +75,50 @@ const JobsScreen = () => {
                                     <Text style={{color:"#fff", fontWeight:"600", fontSize:15}}>{item.location}</Text>
                                 </View>
                           </View>
-                            </View>
+                        </View>
                       )}
                     keyExtractor={(item) => item.id.toString()}
                       horizontal
                         showsHorizontalScrollIndicator = {false}
                 />
             </View>
+            <View style={{flexDirection:"row"}}>
+                <Text style={{fontWeight:"700", fontSize:25 }}>Popular Jobs</Text>
+                  <TouchableOpacity>
+                      <Text style={{color:"#95969D", fontSize:20, marginLeft:175}}>See all</Text>
+                  </TouchableOpacity>
+            </View>
+            <View>
+              <FlatList
+                  data={popularJobsData}
+                  renderItem={({item}) => (
+                  <View style={styles.popularJobsContainer}>
+                      <View>
+                        <Image style={{height:70, width:70}} source={item.image}/>
+                      </View>
+                      
+                        <View style={{marginLeft:10, justifyContent:"space-between"}}>
+                          <Text style={{fontSize:20, fontWeight:"700"}}>{item.title}</Text>
+                          <Text style={{fontSize:21, color:"#95969D"}}>{item.subTitle}</Text>
+                        </View>
+                        <View style={{ justifyContent:"space-between"}}>
+                          <Text style={{fontWeight:"600"}}>{item.amount}</Text>
+                          <Text style={{color:"#95969D"}}>{item.city}</Text>
+                        </View>
+                      
+                  </View>
+                  
+                  )}
+                  keyExtractor={(item) => item.id.toString()}
+                  showsVerticalScrollIndicator = {false}
+                  vertical
+              />
+            </View>
+                     
+
+
+
+                    
     </View>
       )
     }
@@ -145,6 +183,15 @@ const JobsScreen = () => {
           margin:20,
           borderRadius:20,
           padding:20
+        },
+        popularJobsContainer:{
+          backgroundColor:"#fff",
+          margin:20,
+          height:70,
+          borderRadius:10,
+          flexDirection:"row",
+          justifyContent:"space-between"
+          
         }
       });
       export default JobsScreen

@@ -14,12 +14,14 @@ export const socialData = [
     job: "Technical Writer",
     socialAccount: "Google",
     salary: "$160.00",
-    location: "Accra, Ghana"
+    location: "Accra, Ghana",
+    backgroundColor:"#fc9803"
 
   },
   {
     id:2,
-    image:require("../assets/Vector.png"),
+    image:require("../assets/AppleImg.png"),
+    imageStyle: {width: 50, height:50, alignSelf:"center"},
     job: "Prompt Engineer",
     socialAccount: "Facebook",
     salary: "$200.00",

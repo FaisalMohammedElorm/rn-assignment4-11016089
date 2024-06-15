@@ -10,16 +10,16 @@ city:"Los Angeles, US "
 {
 id:0,
 image:require("../assets/ProductManager.png"),
-title:"Jr Executive",
-subTitle:"Burger King",
+title:"Product Manager",
+subTitle:"Boots",
 amount: "$84,000/y",
 city:"Florida, US "
 },
 {
 id:0,
 image:require("../assets/Vector.png"),
-title:"Jr Executive",
-subTitle:"Burger King",
+title:"Cloud Engineer",
+subTitle:"FaceBook",
 amount: "$86,000/y",
 city:"Florida, US "
 },
