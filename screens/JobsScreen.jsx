@@ -89,6 +89,7 @@ const JobsScreen = () => {
                   </TouchableOpacity>
             </View>
             <View>
+            {/** Popular Jobs */}
               <FlatList
                   data={popularJobsData}
                   renderItem={({item}) => (
@@ -158,22 +159,18 @@ const JobsScreen = () => {
           marginRight:20
         },
         filterIconContainer:{
-         
-         
-         height:50,
-         width:50,
-         marginLeft:40,
-         justifyContent:"flex-end",
-         alignItems:"center",
-         borderRadius:15,
-         borderWidth:1,
-         borderColor:"gray"
-         
+          height:50,
+          width:50,
+          marginLeft:40,
+          justifyContent:"flex-end",
+          alignItems:"center",
+          borderRadius:15,
+          borderWidth:1,
+          borderColor:"gray"
         },
         filterIcon:{
           height:39,
           width:40,
-          
         },
         socialDataContainer:{
           height:215, 
@@ -181,8 +178,6 @@ const JobsScreen = () => {
           margin:20,
           borderRadius:20,
           padding:20
-          
-           
         },
         popularJobsContainer:{
           backgroundColor:"#fff",
@@ -191,10 +186,16 @@ const JobsScreen = () => {
           borderRadius:10,
           flexDirection:"row",
           justifyContent:"space-between"
+          }
+        });
+        export default JobsScreen
+            
+            
+         
+         
+         
           
-        }
-      });
-      export default JobsScreen
+           
         
         
        
