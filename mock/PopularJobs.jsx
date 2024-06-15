@@ -8,7 +8,7 @@ amount: "$96,000/y",
 city:"Los Angeles, US "
 },
 {
-id:0,
+id:1,
 image:require("../assets/ProductManager.png"),
 title:"Product Manager",
 subTitle:"Boots",
@@ -16,7 +16,7 @@ amount: "$84,000/y",
 city:"Florida, US "
 },
 {
-id:0,
+id:2,
 image:require("../assets/Vector.png"),
 title:"Cloud Engineer",
 subTitle:"FaceBook",

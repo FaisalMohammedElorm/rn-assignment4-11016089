@@ -49,7 +49,7 @@ const JobsScreen = () => {
                   data={socialData}
                     renderItem={({ item }) => (
                       
-                        <View style={styles.socialDataContainer}>
+                        <View style={[styles.socialDataContainer, {backgroundColor: item.backgroundColor}]}>
                             <View style={{flexDirection:"row"}}>
                                 <View style={{backgroundColor:"white", width:50, borderRadius:5}}>
                                     <Image style={[styles.image, item.imageStyle]}source={item.image}/>
@@ -176,13 +176,13 @@ const JobsScreen = () => {
           
         },
         socialDataContainer:{
-          backgroundColor:"blue", 
-          height:205, 
+          height:215, 
           width:250,
-          backgroundColor:"#241a82",
           margin:20,
           borderRadius:20,
           padding:20
+          
+           
         },
         popularJobsContainer:{
           backgroundColor:"#fff",

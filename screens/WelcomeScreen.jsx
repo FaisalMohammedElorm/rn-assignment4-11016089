@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, TextInput, TouchableOpacity, Image } from 'react-native'
 import React, { useState } from 'react'
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-const WelcomeScreen = () => {
+const WelcomeScreen = ({navigation}) => {
   const [Name, setName] = useState("");
   const [Email, setEmail] = useState("");
 
@@ -31,16 +31,22 @@ const WelcomeScreen = () => {
           <TextInput
             placeholder="Name"
               style={styles.input}
+                value={Name}
+                  onChangeText={(text) => setName(text)}
           />
           <TextInput
             placeholder="Email"
               style={styles.input}
+                value={Email}
+                  onChangeText={(text) => setEmail(text)}
           />
-          <TouchableOpacity style={styles.loginButtonContainer}>
+          <TouchableOpacity style={styles.loginButtonContainer} onPress={() => navigation.navigate("Jobs")}>
             <Text style={{color:"#fff", fontSize:20, fontWeight:"700"}}>Log In</Text>
           </TouchableOpacity>
-          <View style={{alignItems:"center", marginTop:35}}>
-              <Text style={styles.customText}>Or continue with</Text>
+          <View style={{alignItems:"center", marginTop:35, flexDirection:"row", width:"100%"}}>
+            <View style={styles.line}/>
+                <Text style={styles.customText}>Or continue with</Text>
+              <View style={styles.line}/>
           </View>
           {/**Icons Container */}
           <View style={{flexDirection:"row", alignItems:"center", justifyContent:"center", paddingTop:70}}>
@@ -95,16 +101,23 @@ const WelcomeScreen = () => {
     borderRadius:10
   },
   customText:{
-    position:"absolute",
+    
     fontWeight:"500",
     fontSize:15,
     lineHeight:16,
+    color:"#666",
+    marginHorizontal:10
+},
+line:{
+  flex:1,
+  height:1,
+  backgroundColor:"#ccc"
+}
+});
+export default WelcomeScreen
 
 
 
-  }
-  });
-  export default WelcomeScreen
 
                 
                 
